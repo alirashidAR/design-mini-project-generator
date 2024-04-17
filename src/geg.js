@@ -9,12 +9,13 @@ const Geg = () => {
   const [clicked2, setClicked2] = useState(false);
   const [randomWord1, setRandomWord1] = useState({ text: '', font: '', color: '' });
   const [randomWord2, setRandomWord2] = useState('');
+  const [randomGradients, setRandomGradients] = useState([]);
   const [randomImageIndex, setRandomImageIndex] = useState(0);
 
   useEffect(() => {
     generateRandomWords();
     generateRandomWords2();
-    generateRandomImageIndex();
+    generateRandomGradients();
   }, []);
 
   const generateRandomWords = () => {
@@ -68,6 +69,29 @@ const Geg = () => {
     setRandomWord2(words2[randomIndex2]);
   };
 
+  const generateRandomGradients = () => {
+    const gradients = [
+      'radial-gradient(circle at 20% 30%, rgba(75,0,130,0.8), transparent)',
+      'radial-gradient(circle at 80% 70%, rgba(0,128,128,0.8), transparent)',
+      'radial-gradient(circle at 50% 50%, rgba(255,20,147,0.8), transparent)',
+      'radial-gradient(circle at 30% 80%, rgba(255, 204, 204, 0.8), transparent)',
+      'radial-gradient(circle at 70% 20%, rgba(0,191,255,0.8), transparent)',
+      'radial-gradient(circle at 40% 60%, rgba(135,206,250,0.8), transparent)',
+      'radial-gradient(circle at 60% 40%, rgba(65,105,225,0.8), transparent)',
+      'radial-gradient(circle at 10% 10%, rgba(30,144,255,0.8), transparent)',
+      'radial-gradient(circle at 90% 90%, rgba(255,69,0,0.8), transparent)',
+      'radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.8), transparent)',
+    ];
+
+    const randomGradients = [];
+    for (let i = 0; i < 10; i++) {
+      const randomIndex = Math.floor(Math.random() * gradients.length);
+      randomGradients.push(gradients[randomIndex]);
+    }
+
+    setRandomGradients(randomGradients);
+  };
+
   const generateRandomImageIndex = () => {
     const randomIndex = Math.floor(Math.random() * images.length);
     setRandomImageIndex(randomIndex);
@@ -76,19 +100,35 @@ const Geg = () => {
   const handleClick1 = () => {
     setClicked1(true);
     generateRandomWords();
-    generateRandomImageIndex();
+    generateRandomGradients();
   };
 
   const handleClick2 = () => {
     setClicked2(true);
     generateRandomWords2();
-    generateRandomImageIndex();
+    generateRandomGradients();
   };
 
   const isMobile = window.innerWidth <= 768;
 
   return (
-    <div className="flex flex-col background-image justify-center items-center m-0 p-0 " style={{ backgroundImage: `url(${images[randomImageIndex]})` }}>
+    <div
+      className="flex flex-col background-image justify-center items-center m-0 p-0 "
+      style={{
+        background: `
+          ${randomGradients[0]},
+          ${randomGradients[1]},
+          ${randomGradients[2]},
+          ${randomGradients[3]},
+          ${randomGradients[4]},
+          ${randomGradients[5]},
+          ${randomGradients[6]},
+          ${randomGradients[7]},
+          ${randomGradients[8]},
+          ${randomGradients[9]}
+        `,
+      }}
+    >
       <div className="box bg w-screen min-h-screen flex flex-col justify-center items-start max-md:border-8 p-12">
         <div className='hello-world flex flex-col justify-start items-center w-1/12 max-md:w-4/12' >
           <span className='Glory pt-3 max-md:text-xl'>DESIGN</span>
