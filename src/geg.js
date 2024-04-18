@@ -81,8 +81,18 @@ const Geg = () => {
       'radial-gradient(circle at 10% 10%, rgba(30,144,255,0.8), transparent)',
       'radial-gradient(circle at 90% 90%, rgba(255,69,0,0.8), transparent)',
       'radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.8), transparent)',
+      'radial-gradient(circle at 30% 30%, rgba(255,99,71,0.8), transparent)', // Red
+      'radial-gradient(circle at 70% 70%, rgba(218,112,214,0.8), transparent)', // Orchid
+      'radial-gradient(circle at 40% 40%, rgba(60,179,113,0.8), transparent)', // Medium Sea Green
+      'radial-gradient(circle at 60% 60%, rgba(218,165,32,0.8), transparent)', // Goldenrod
+      'radial-gradient(circle at 20% 80%, rgba(160,82,45,0.8), transparent)', // Sienna
+      'radial-gradient(circle at 80% 20%, rgba(128,0,128,0.8), transparent)', // Purple
+      'radial-gradient(circle at 45% 55%, rgba(255,192,203,0.8), transparent)', // Pink
+      'radial-gradient(circle at 75% 25%, rgba(255,215,0,0.8), transparent)', // Gold
+      'radial-gradient(circle at 35% 65%, rgba(255,250,205,0.8), transparent)', // LemonChiffon
+      'radial-gradient(circle at 65% 35%, rgba(152,251,152,0.8), transparent)', // Pale Green
     ];
-
+    
     const randomGradients = [];
     for (let i = 0; i < 10; i++) {
       const randomIndex = Math.floor(Math.random() * gradients.length);
@@ -113,7 +123,7 @@ const Geg = () => {
 
   return (
     <div
-      className="flex flex-col background-image justify-center items-center m-0 p-0 "
+      className="flex flex-col justify-center items-center m-0 p-0 "
       style={{
         background: `
           ${randomGradients[0]},
@@ -129,8 +139,8 @@ const Geg = () => {
         `,
       }}
     >
-      <div className="box bg w-screen min-h-screen flex flex-col justify-center items-start max-md:border-8 p-12">
-        <div className='hello-world flex flex-col justify-start items-center w-1/12 max-md:w-4/12' >
+      <div className="box grainy-background bg w-screen min-h-screen flex flex-col justify-center items-start max-md:border-8 p-12">
+        <div className='hello-world flex flex-col justify-start items-center w-1/12 max-md:w-3/12 md:text-md' >
           <span className='Glory pt-3 max-md:text-xl'>DESIGN</span>
           <span className='pb-3 z-10 Ostrich max-md:text-3xl max-md:-mt-3 md:-mt-6'>CORE '24</span>
         </div>
