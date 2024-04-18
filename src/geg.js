@@ -123,7 +123,7 @@ const Geg = () => {
 
   return (
     <div
-      className="flex flex-col justify-center items-center m-0 p-0 "
+      className="flex flex-col justify-center items-center m-0 p-0 grainy-background"
       style={{
         background: `
           ${randomGradients[0]},
