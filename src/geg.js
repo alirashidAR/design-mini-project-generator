@@ -119,6 +119,12 @@ const Geg = () => {
     generateRandomGradients();
   };
 
+  const handleRandom = () => {
+    generateRandomGradients();
+    generateRandomWords();
+    generateRandomWords2();
+  };
+
   const isMobile = window.innerWidth <= 768;
 
   return (
@@ -147,14 +153,14 @@ const Geg = () => {
         <div className='hello-world-right flex flex-row justify-start items-center w-44 max-md:w-4/12 text-black rounded-l-full Satoshi max-md:text-sm text-3xl' >
           <div className='p-1 pr-5'>
             <Avatar className='avatar' sx={{ width: isMobile ? 30 : 56, height: isMobile ? 30 : 56 }}>
-              <img src={ISTE} alt='Gagan' className='max-md:w-28' />
+              <img src={ISTE} alt='Gagan' className='max-md:w-28 w-full' />
             </Avatar>
           </div>
           ISTE
         </div>
         <div className='max-md:w-full w-full text-white pb-9 max-md:text-2xl md:text-4xl text-9xl'>
           {clicked1 || clicked2 ? (
-            <div className='flex flex-row justify-start items-center max-md:text-2xl Satoshi mb-10'>
+            <div className='flex flex-row justify-start items-center max-md:text-xl Satoshi mb-10'>
               <div className='pr-5'>
                 <Avatar sx={{ width: 56, height: 56 }}>
                   <img src={Profile} alt='Gagan' className='max-md:w-28' />
@@ -165,7 +171,7 @@ const Geg = () => {
           ) : null}
           {clicked1 || clicked2 ? (
             <>
-              <h2 className="text-8xl max-md:text-2xl w-fit text-white Satoshi">
+              <h2 className="text-8xl max-md:text-3xl w-fit text-white Satoshi">
                 Design
                 <span
                   className=" hover:border-b-2 hover:border-b-blue-500 mx-4 mb-1"
@@ -265,6 +271,41 @@ const Geg = () => {
               </button>
             </div>
           )}
+        </div>
+        <div className='border-4 border-white hover:border-cyan-400 px-8 py-2 rounded-full randombutton Satoshi md:text-3xl text-white max-md:text-lg' onClick={handleRandom}>
+        <svg
+                    viewBox="0 0 35 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`glow mx-2 md:mr-4 mb-2`}
+                    style={{ display: 'inline', verticalAlign: 'middle', height: isMobile ? '20px' : '25px', width: isMobile ? '20px' : '25px' }}
+                  >
+                    <path
+                      d="M1.41016 6.1416V14.604H9.87256"
+                      stroke="hsl(209, 100%, 90%)"
+                      className="custom-stroke"
+                      strokeWidth="2.8208"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M33.439 28.708V20.2456H24.9766"
+                      stroke="hsl(209, 100%, 90%)"
+                      className="custom-stroke"
+                      strokeWidth="2.8208"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M28.8989 13.1934C28.1836 11.172 26.9678 9.36477 25.3651 7.94029C23.7625 6.51581 21.825 5.52053 19.7337 5.04733C17.6423 4.57413 15.4651 4.63843 13.4053 5.23423C11.3455 5.83003 9.47024 6.93791 7.95441 8.4545L1.41016 14.6038M32.439 20.2454L25.8947 26.3948C24.3789 27.9114 22.5036 29.0193 20.4438 29.6151C18.384 30.2109 16.2068 30.2752 14.1154 29.802C12.0241 29.3288 10.0867 28.3335 8.48397 26.909C6.88129 25.4845 5.66557 23.6772 4.95026 21.6558"
+                      stroke="hsl(209, 100%, 90%)"
+                      className="custom-stroke"
+                      strokeWidth="2.8208"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+          Randomise
         </div>
       </div>
     </div>

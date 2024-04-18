@@ -217,3 +217,26 @@ code {
   /* Ensure background size covers the entire container */
   background-size: cover;
 }
+
+
+.randombutton
+{
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.glow
+{
+  stroke: white;
+}
+
+.randombutton {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.randombutton:hover {
+  transform: translateY(-3px);
+}
