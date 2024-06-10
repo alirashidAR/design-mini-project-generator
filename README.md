@@ -1,5 +1,4 @@
-# Design Generator
-
+# Design Generator 
 Welcome to the Design Generator, a simple webpage designed for assigning random design tasks. With just a click, you can randomize both the background and the tasks to spark creativity!
 
 ## How to Use
